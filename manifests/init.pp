@@ -29,6 +29,7 @@ class xinetd {
     #   $user        - optional - defaults to "root"
     #   $group       - optional - defaults to "root"
     #   $instances   - optional - defaults to "UNLIMITED"
+    #   $log_on_failure - optional 
     #   $wait        - optional - based on $protocol will default to "yes" for udp and "no" for tcp
     #
     # Actions:
@@ -50,7 +51,7 @@ class xinetd {
     #       per_source  => "11",
     #   } # xinetd::service
     #
-    define service ($cps = undef, $flags = undef, $per_source = undef, $port, $server, $server_args = undef, $disable = "no", $socket_type = "stream", $protocol = "tcp", $user = "root", $group = "root", $instances = "UNLIMITED", $wait = undef) {
+    define service ($cps = undef, $flags = undef, $per_source = undef, $port, $server, $server_args = undef, $disable = "no", $socket_type = "stream", $protocol = "tcp", $user = "root", $group = "root", $instances = "UNLIMITED", $wait = undef,$log_on_failure = undef) {
         if $wait {
             $mywait = $wait
         } else {
