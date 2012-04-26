@@ -15,4 +15,5 @@ service <%= name %>
 <% if per_source != :undef %>        per_source      = <%= per_source %><% end %>
 <% if cps != :undef %>        cps             = <%= cps %><% end %>
 <% if flags != :undef %>        flags           = <%= flags %><% end %>
+<% if service_type != :undef %>        type     = <%= service_type %><% end %>
 }
