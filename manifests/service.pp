@@ -5,7 +5,7 @@
 #
 # Parameters:
 #   $port         - required - determines the service port
-#   $server       - required - determines the program to execute for this service
+#   $server       - required - determines the executable for this service
 #   $cps          - optional
 #   $flags        - optional
 #   $per_source   - optional
@@ -16,7 +16,9 @@
 #   $user         - optional - defaults to 'root'
 #   $group        - optional - defaults to 'root'
 #   $instances    - optional - defaults to 'UNLIMITED'
-#   $wait         - optional - based on $protocol will default to 'yes' for udp and 'no' for tcp
+#   $wait         - optional - based on $protocol
+#                               will default to 'yes' for udp
+#                               and 'no' for tcp
 #   $bind         - optional - defaults to '0.0.0.0'
 #   $service_type - optional (type setting in xinetd)
 #
