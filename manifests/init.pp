@@ -9,7 +9,9 @@
 #     server_args => '--daemon --config /etc/rsync.conf',
 #  }
 #
-class xinetd {
+class xinetd (
+  $xinetd::hasstatus = $xinetd::params::hasstatus
+) inherits xinetd::params {
 
   package { 'xinetd': }
 
@@ -18,10 +20,11 @@ class xinetd {
   }
 
   service { 'xinetd':
-    ensure  => running,
-    enable  => true,
-    restart => '/etc/init.d/xinetd reload',
-    require => [ Package['xinetd'],
-                 File['/etc/xinetd.conf'] ],
+    ensure    => running,
+    enable    => true,
+    hasstatus => $xinetd::hasstatus,
+    restart   => '/etc/init.d/xinetd reload',
+    require   => [ Package['xinetd'],
+                  File['/etc/xinetd.conf'] ],
   }
 }
