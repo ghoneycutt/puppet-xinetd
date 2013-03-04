@@ -9,6 +9,7 @@
 #   $ensure         - optional - defaults to 'present'
 #   $cps            - optional
 #   $flags          - optional
+#   $nice           - optional - determines the service priority
 #   $per_source     - optional
 #   $server_args    - optional
 #   $log_on_failure - optional - may contain any combination of
@@ -52,6 +53,7 @@ define xinetd::service (
   $ensure         = present,
   $cps            = undef,
   $flags          = undef,
+  $nice           = undef,
   $log_on_failure = undef,
   $per_source     = undef,
   $server_args    = undef,

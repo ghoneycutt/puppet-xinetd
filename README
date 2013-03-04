@@ -10,6 +10,7 @@ This is the xinetd module.
 # Parameters:
 #   $cps          - optional
 #   $flags        - optional
+#   $nice         - optional - determines the service priority
 #   $per_source   - optional
 #   $port         - required - determines the service port
 #   $server       - required - determines the program to execute for this service
